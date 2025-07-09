@@ -1,0 +1,27 @@
+import unittest
+from unittest.mock import patch
+from io import StringIO
+from main import predict_weather
+
+class TestPredictWeather(unittest.TestCase):
+
+    def test_typical_sunny(self):
+        self.assertEqual(predict_weather(30, 25, 35, 0), "sunny")
+
+    def test_typical_rainy(self):
+        self.assertEqual(predict_weather(22, 18, 25, 80), "rainy")
+
+    def test_typical_snowy(self):
+        self.assertEqual(predict_weather(-5, -10, 0, 5), "snowy")
+
+    def test_typical_cloudy(self):
+        self.assertEqual(predict_weather(15, 10, 20, 10), "cloudy")
+
+    def test_invalid_type(self):
+        with self.assertRaises(TypeError):
+            predict_weather("hot", 10, 20, 5)
+
+if __name__ == '__main__':
+    with open("test_results.txt", "w") as f:
+        runner = unittest.TextTestRunner(stream=f, verbosity=2)
+        unittest.main(testRunner=runner, exit=False)
