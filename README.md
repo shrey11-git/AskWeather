@@ -49,7 +49,7 @@ Train the model on historical data,
 Evaluate it, 
 Launch the GUI interface for weather prediction
 
-# ※ Screenshot
+# ※ AskWeather - GUI Preview
 <img width="391" height="681" alt="AskWeather" src="https://github.com/user-attachments/assets/2ff91a88-25ea-4f13-9693-5067a5841ef6" />
 
 # ※ What I Learned
