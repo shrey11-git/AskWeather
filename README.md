@@ -39,7 +39,7 @@ Test suite with edge cases and validation
 # ※ How to Run
 - Clone the repo
 git clone https://github.com/shrey11-git/AskWeather.git
-cd askweather
+cd AskWeather
 - Install dependencies
 pip install -r requirements.txt
 - Run the main app
