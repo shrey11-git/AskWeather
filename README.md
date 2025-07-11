@@ -29,12 +29,12 @@ Click a button to get instant weather prediction
 Test suite with edge cases and validation
 
 # ※ Tech Stack
-Language- Python 3.9+
-ML & Evaluation- scikit-learn
-Data Handling- pandas
-GUI- tkinter, Pillow
-Testing- unittest
-Visualization- PIL (image handling)
+- Language- Python 3.9+
+- ML & Evaluation- scikit-learn
+- Data Handling- pandas
+- GUI- tkinter, Pillow
+- Testing- unittest
+- Visualization- PIL (image handling)
 
 # ※ How to Run
 - Clone the repo
