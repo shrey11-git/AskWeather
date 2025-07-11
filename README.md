@@ -4,7 +4,7 @@ A user-friendly weather classifier powered by machine learning and wrapped in a 
 # ※ What Problem Does It Solve?
 A machine learning-based weather classification tool that predicts daily weather types using temperature and precipitation inputs. Includes a user-friendly GUI for quick, code-free predictions.
 
-# ※ The Story Behind This Project
+# ※ How It Came to Life
 We often rely on news apps or vague “chance of rain” forecasts. But what if we could learn from historical weather patterns to build our own intuitive weather labeling tool?
 
 AskWeather is a hands-on project that blends classic machine learning with real meteorological data — in this case, over 30 years of data from Mumbai (Santacruz).
