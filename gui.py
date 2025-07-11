@@ -1,14 +1,13 @@
-#import required libraries
 import tkinter as tk
 from tkinter import messagebox
 import tkinter.font as tkFont
 from PIL import Image, ImageTk
 
-BG_COLOR = "#f4f4f4" # Light gray background
-BTN_COLOR = "#4CAF50" # Green button background
-BTN_TEXT_COLOR = "#ffffff" # White button text
-ENTRY_BG = "#ffffff" # White entry background
-FONT_NAME = "Segoe UI" # Font used in the application
+BG_COLOR = "#f4f4f4"
+BTN_COLOR = "#4CAF50"
+BTN_TEXT_COLOR = "#ffffff"
+ENTRY_BG = "#ffffff"
+FONT_NAME = "Segoe UI"
 
 def launch_gui(predict_weather_fn):
     def submit():
@@ -18,7 +17,7 @@ def launch_gui(predict_weather_fn):
             tmax = float(entry_tmax.get())
             prcp = float(entry_prcp.get())
 
-            # --- Validation Rules ---
+            # Validation Rules
             if not (-50 <= tmin <= tmax <= 60):
                 raise ValueError("Temperatures must be between -50°C and 60°C with tmin ≤ tmax.")
             if not (0 <= prcp <= 1000):
@@ -30,7 +29,7 @@ def launch_gui(predict_weather_fn):
         except ValueError as e:
             messagebox.showerror("Error", str(e))
 
-    # --- Load and resize background image ---
+    # Load and resize background image
 
     width, height = 400, 660
 
@@ -39,31 +38,27 @@ def launch_gui(predict_weather_fn):
     root.geometry(f"{width}x{height}")
     root.resizable(False, False)
 
-    # Resize the image to a manageable window size
+    # Resizing the image
     bg_image_raw = Image.open("assets/weather_banner.jpg")
     bg_image_resized = bg_image_raw.resize((400, 660), Image.Resampling.LANCZOS)
     bg_image = ImageTk.PhotoImage(bg_image_resized)
 
-    # --- Canvas for background image ---
     canvas = tk.Canvas(root, width=width, height=height)
     canvas.pack(fill="both", expand=True)
     canvas.create_image(0, 0, image=bg_image, anchor="nw")
 
     canvas.create_rectangle(30, 20, 370, 120, fill="#ffffff", stipple="gray50", outline="")
 
-    # --- Fonts ---
     title_font = tkFont.Font(family=FONT_NAME, size=16, weight="bold")
     label_font = tkFont.Font(family=FONT_NAME, size=11)
     entry_font = tkFont.Font(family=FONT_NAME, size=10)
 
-    # --- Overlay UI on top of canvas ---
-    title = tk.Label(root, text="AskWeather 🌤️", font=title_font, bg="#ffffff") # Semi-transparent
+    title = tk.Label(root, text="AskWeather 🌤️", font=title_font, bg="#ffffff")
     canvas.create_window(width // 2, 50, window=title)
 
     form_frame = tk.Frame(root, bg="#ffffff", bd=0)
     canvas.create_window(width // 2, height // 2, window=form_frame)
 
-    # --- Input Fields ---
     labels = ["Avg Temp (tavg)", "Min Temp (tmin)", "Max Temp (tmax)", "Precipitation (prcp)"]
     entries = []
 
@@ -77,7 +72,6 @@ def launch_gui(predict_weather_fn):
 
     entry_tavg, entry_tmin, entry_tmax, entry_prcp = entries
 
-    # --- Predictn Button ---
     predict_btn = tk.Button(root, text="Predict Weather 🌱", font=label_font,
                             bg="#4CAF50", fg="white", activebackground="#45a049",
                             command=submit, padx=20, pady=8)
