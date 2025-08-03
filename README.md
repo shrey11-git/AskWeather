@@ -7,9 +7,9 @@ A machine learning-based weather classification tool that predicts daily weather
 # ※ How It Came to Life
 We often rely on news apps or vague “chance of rain” forecasts. But what if we could learn from historical weather patterns to build our own intuitive weather labeling tool?
 
-AskWeather is a hands-on project that blends classic machine learning with real meteorological data — in this case, over 30 years of data from Mumbai (Santacruz).
+AskWeather is a hands-on project that blends classic machine learning with real meteorological data - in this case, over 30 years of data from Mumbai (Santacruz).
 
-We trained a classifier that predicts whether a day is sunny, rainy, snowy, humid, cloudy, or cold — based on just a few values you can get from any weather API or sensor.
+We trained a classifier that predicts whether a day is sunny, rainy, snowy, humid, cloudy, or cold - based on just a few values you can get from any weather API or sensor.
 
 # ※ Key Features
 - CSV Input: Reads decades of weather data (Mumbai_1990_2022_Santacruz.csv).
@@ -65,5 +65,5 @@ Shreyash Tiwari
 
 TL;DR Summary: 
 AskWeather is a weather label predictor trained on historical climate data.
-Just enter temp and rainfall values — and get an instant weather forecast using a friendly GUI.
+Just enter temp and rainfall values - and get an instant weather forecast using a friendly GUI.
 It’s fast, accurate, and built to teach you the power of small data + smart models.
